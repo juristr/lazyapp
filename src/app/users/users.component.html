@@ -1,0 +1,12 @@
+<h1>Users</h1>
+
+<app-user-list
+  [users]="users$ | async"
+  [actionsTemplate]="userActions"
+></app-user-list>
+
+<ng-template #userActions>
+  <button mat-icon-button>
+    <mat-icon>edit</mat-icon>
+  </button>
+</ng-template>

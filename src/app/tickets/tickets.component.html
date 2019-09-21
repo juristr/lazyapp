@@ -1,0 +1,10 @@
+<h1>Tickets</h1>
+
+<app-ticket-list [tickets]="tickets$ | async" [actionsTemplate]="ticketActions">
+</app-ticket-list>
+
+<ng-template #ticketActions>
+  <button mat-icon-button>
+    <mat-icon>edit</mat-icon>
+  </button>
+</ng-template>

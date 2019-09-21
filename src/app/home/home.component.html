@@ -1,0 +1,11 @@
+<h1>Dashboard</h1>
+
+<div class="container">
+  <mat-card routerLink="/tickets" matRipple>
+    <h3>{{ numTickets | async }} Tickets</h3></mat-card
+  >
+
+  <mat-card routerLink="/users" matRipple>
+    <h3>{{ numUsers | async }} Collaborators</h3>
+  </mat-card>
+</div>

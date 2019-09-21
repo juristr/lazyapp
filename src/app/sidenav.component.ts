@@ -5,9 +5,21 @@ import { Component, OnInit } from '@angular/core';
   template: `
     <mat-list>
       <mat-list-item>
-        <button mat-button>
+        <button mat-button routerLink="/home">
           <mat-icon>home</mat-icon>
-          Home
+          Dashboard
+        </button>
+      </mat-list-item>
+      <mat-list-item>
+        <button mat-button routerLink="/tickets">
+          <mat-icon>format_list_bulleted</mat-icon>
+          Tickets
+        </button>
+      </mat-list-item>
+      <mat-list-item>
+        <button mat-button routerLink="/users">
+          <mat-icon>people</mat-icon>
+          Users
         </button>
       </mat-list-item>
     </mat-list>
@@ -41,6 +53,10 @@ import { Component, OnInit } from '@angular/core';
 
       .route-active {
         background-color: #e0e0e0;
+      }
+
+      .mat-button {
+        text-align: left;
       }
     `
   ]

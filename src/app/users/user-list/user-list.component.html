@@ -1,0 +1,56 @@
+<table mat-table [dataSource]="users" class="mat-elevation-z1">
+  <!--- Note that these columns can be defined in any order.
+        The actual rendered columns are set as a property on the row definition" -->
+
+  <!-- Position Column -->
+  <ng-container matColumnDef="ID">
+    <th mat-header-cell *matHeaderCellDef>Id</th>
+    <td
+      mat-cell
+      *matCellDef="let element"
+      style.min-width="50px"
+      style.width="50px"
+    >
+      {{ element.id }}
+    </td>
+  </ng-container>
+
+  <!-- Name Column -->
+  <ng-container matColumnDef="name">
+    <th mat-header-cell *matHeaderCellDef>Name</th>
+    <td mat-cell *matCellDef="let element">{{ element.name }}</td>
+  </ng-container>
+
+  <ng-container *ngIf="actionsTemplate" matColumnDef="actions" stickyEnd>
+    <th
+      mat-header-cell
+      *matHeaderCellDef
+      class="action-column"
+      style.min-width="50px"
+      style.width="50px"
+    >
+      <div class="header-cell-divider" role="presentation"></div>
+      <div class="cell-content">
+        Actions
+      </div>
+    </th>
+    <td
+      mat-cell
+      *matCellDef="let element"
+      class="action-column"
+      style.min-width="50px"
+      style.width="50px"
+    >
+      <div class="cell-content">
+        <ng-container
+          [ngTemplateOutlet]="actionsTemplate"
+          [ngTemplateOutletContext]="{ row: element }"
+        >
+        </ng-container>
+      </div>
+    </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+</table>
