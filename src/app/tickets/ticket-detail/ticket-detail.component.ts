@@ -1,4 +1,10 @@
-import { Component, OnInit, Input } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  Input,
+  ViewContainerRef,
+  ComponentFactoryResolver
+} from '@angular/core';
 import { BackendService, Ticket } from 'src/app/backend.service';
 import { of, combineLatest } from 'rxjs';
 import { map, switchMap } from 'rxjs/operators';
@@ -69,5 +75,20 @@ export class TicketDetailComponent implements OnInit {
       //   }
       // });
     });
+  }
+
+  openUserDetailIvy(userId) {
+    import('../../users/user-detail/user-detail.component').then(
+      ({ UserDetailComponent }) => {
+        this.backendService.userById(userId).subscribe(user => {
+          this.dialog.open(UserDetailComponent, {
+            width: '650px',
+            data: {
+              user
+            }
+          });
+        });
+      }
+    );
   }
 }
