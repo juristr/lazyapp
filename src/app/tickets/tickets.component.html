@@ -3,8 +3,8 @@
 <app-ticket-list [tickets]="tickets$ | async" [actionsTemplate]="ticketActions">
 </app-ticket-list>
 
-<ng-template #ticketActions>
-  <button mat-icon-button>
+<ng-template #ticketActions let-row="row">
+  <button mat-icon-button [routerLink]="row.id">
     <mat-icon>edit</mat-icon>
   </button>
 </ng-template>

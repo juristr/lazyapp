@@ -1,0 +1,35 @@
+<ng-container *ngIf="vm$ | async as vm">
+  <p>
+    {{ vm.ticket.description }}
+  </p>
+
+  <label>Assignee:</label>
+  <a href="javascript:;" (click)="openUserDetail(vm.ticket.assigneeId)">{{
+    vm.assignee.name
+  }}</a>
+</ng-container>
+
+<!-- <mat-tab-group>
+  <mat-tab>
+    <ng-template mat-tab-label>
+      <span>Ticket History</span>
+    </ng-template>
+    <ng-template matTabContent>
+      <mat-list role="list">
+        <mat-list-item role="listitem"
+          >Mark change the description</mat-list-item
+        >
+        <mat-list-item role="listitem"
+          >Issue was assigned to Mark</mat-list-item
+        >
+        <mat-list-item role="listitem">Juri opened the issue</mat-list-item>
+      </mat-list>
+    </ng-template>
+  </mat-tab>
+  <mat-tab>
+    <ng-template mat-tab-label>
+      <span>Assigned User</span>
+    </ng-template>
+    <ng-template matTabContent> </ng-template>
+  </mat-tab>
+</mat-tab-group> -->

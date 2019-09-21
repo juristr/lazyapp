@@ -15,6 +15,13 @@ const routes: Routes = [
     path: 'users',
     loadChildren: () => import('./users/users.module').then(m => m.UsersModule)
   },
+  // {
+  //   path: 'ticket-history',
+  //   loadChildren: () =>
+  //     import('./ticket-history/ticket-history.module').then(
+  //       m => m.TicketHistoryModule
+  //     )
+  // },
   {
     path: '',
     redirectTo: 'home',

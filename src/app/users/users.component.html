@@ -5,8 +5,8 @@
   [actionsTemplate]="userActions"
 ></app-user-list>
 
-<ng-template #userActions>
-  <button mat-icon-button>
+<ng-template #userActions let-row="row">
+  <button mat-icon-button [routerLink]="row.id">
     <mat-icon>edit</mat-icon>
   </button>
 </ng-template>

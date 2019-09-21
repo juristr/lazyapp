@@ -1,0 +1,33 @@
+<ng-container *ngIf="user">
+  <h3>ID: {{ user.id }}</h3>
+  <h3>{{ user.name }}</h3>
+
+  <hr />
+
+  <mat-tab-group>
+    <mat-tab>
+      <ng-template mat-tab-label>
+        <span>History</span>
+      </ng-template>
+      <ng-template matTabContent>
+        ...
+      </ng-template>
+    </mat-tab>
+    <mat-tab>
+      <ng-template mat-tab-label>
+        <span>Assigned Tickets</span>
+      </ng-template>
+      <ng-template matTabContent>
+        <app-ticket-list
+          [tickets]="userTickets$ | async"
+          [actionsTemplate]="ticketActions"
+        ></app-ticket-list>
+        <ng-template #ticketActions let-row="row">
+          <button mat-icon-button (click)="onOpenTicketDetails(row)">
+            <mat-icon>edit</mat-icon>
+          </button>
+        </ng-template>
+      </ng-template>
+    </mat-tab>
+  </mat-tab-group>
+</ng-container>

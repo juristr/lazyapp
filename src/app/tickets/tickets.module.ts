@@ -8,16 +8,29 @@ import { MatTableModule } from '@angular/material/table';
 import { TicketListComponent } from './ticket-list/ticket-list.component';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
+import { MatTabsModule } from '@angular/material/tabs';
+
+import { TicketDetailComponent } from './ticket-detail/ticket-detail.component';
+import { TicketDetailPageComponent } from './ticket-detail-page.component';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
-  declarations: [TicketsComponent, TicketListComponent],
+  declarations: [
+    TicketsComponent,
+    TicketListComponent,
+    TicketDetailComponent,
+    TicketDetailPageComponent
+  ],
   imports: [
     CommonModule,
     TicketsRoutingModule,
     MatIconModule,
     MatButtonModule,
     MatListModule,
-    MatTableModule
-  ]
+    MatTableModule,
+    MatTabsModule,
+    MatDialogModule
+  ],
+  exports: [TicketListComponent]
 })
 export class TicketsModule {}

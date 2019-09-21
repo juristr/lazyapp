@@ -7,15 +7,29 @@ import { UserListComponent } from './user-list/user-list.component';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatTableModule } from '@angular/material/table';
+import { UserDetailPageComponent } from './user-detail-page.component';
+import { UserDetailComponent } from './user-detail/user-detail.component';
+import { MatTabsModule } from '@angular/material/tabs';
+import { TicketsModule } from '../tickets/tickets.module';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
-  declarations: [UsersComponent, UserListComponent],
+  declarations: [
+    UsersComponent,
+    UserListComponent,
+    UserDetailPageComponent,
+    UserDetailComponent
+  ],
   imports: [
     CommonModule,
     UsersRoutingModule,
     MatIconModule,
     MatButtonModule,
-    MatTableModule
+    MatTableModule,
+    MatTabsModule,
+    MatDialogModule,
+    // need to import, otherwise we cannot use the component
+    TicketsModule
   ]
 })
 export class UsersModule {}

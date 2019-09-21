@@ -13,6 +13,13 @@ export type Ticket = {
   completed: boolean;
 };
 
+export type TicketHistory = {
+  id: number;
+  ticketId: number;
+  userId: number;
+  change: 'created' | 'assigned' | 'resolved' | 'change';
+};
+
 @Injectable({
   providedIn: 'root'
 })
@@ -44,6 +51,15 @@ export class BackendService {
     }
   ];
 
+  private storedTicketHistory: TicketHistory[] = [
+    {
+      id: 1,
+      ticketId: 1,
+      userId: 333,
+      change: 'created'
+    }
+  ];
+
   private storedUsers: User[] = [
     { id: 111, name: 'Juri' },
     { id: 222, name: 'Mark' },
@@ -58,5 +74,21 @@ export class BackendService {
 
   users() {
     return of(this.storedUsers);
+  }
+
+  ticketHistory(ticketId: number = null) {
+    if (ticketId) {
+      return of(this.storedTicketHistory.filter(x => x.ticketId === ticketId));
+    } else {
+      return of(this.storedTicketHistory);
+    }
+  }
+
+  userById(userId) {
+    return of(this.storedUsers.find(x => x.id === userId));
+  }
+
+  ticketById(ticketId) {
+    return of(this.storedTickets.find(x => x.id === ticketId));
   }
 }

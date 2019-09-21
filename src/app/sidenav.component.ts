@@ -16,6 +16,14 @@ import { Component, OnInit } from '@angular/core';
           Tickets
         </button>
       </mat-list-item>
+      <!--
+      <mat-list-item>
+        <button mat-button routerLink="/ticket-history">
+          <mat-icon>change_history</mat-icon>
+          Change History
+        </button>
+      </mat-list-item>
+      -->
       <mat-list-item>
         <button mat-button routerLink="/users">
           <mat-icon>people</mat-icon>
