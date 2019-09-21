@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, Type } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { TicketsRoutingModule } from './tickets-routing.module';
@@ -13,6 +13,7 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { TicketDetailComponent } from './ticket-detail/ticket-detail.component';
 import { TicketDetailPageComponent } from './ticket-detail-page.component';
 import { MatDialogModule } from '@angular/material/dialog';
+import { DynamicHostModule } from '../shared/dynamic-host';
 
 @NgModule({
   declarations: [
@@ -29,8 +30,14 @@ import { MatDialogModule } from '@angular/material/dialog';
     MatListModule,
     MatTableModule,
     MatTabsModule,
-    MatDialogModule
+    MatDialogModule,
+    DynamicHostModule
   ],
-  exports: [TicketListComponent]
+  exports: [TicketListComponent, TicketDetailComponent]
 })
-export class TicketsModule {}
+export class TicketsModule {
+  customElementComponent: { [prop: string]: Type<any> } = {
+    'dynel-ticket-list': TicketListComponent,
+    'dynel-ticket-detail': TicketDetailComponent
+  };
+}

@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA, Type } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { UsersRoutingModule } from './users-routing.module';
@@ -10,8 +10,9 @@ import { MatTableModule } from '@angular/material/table';
 import { UserDetailPageComponent } from './user-detail-page.component';
 import { UserDetailComponent } from './user-detail/user-detail.component';
 import { MatTabsModule } from '@angular/material/tabs';
-import { TicketsModule } from '../tickets/tickets.module';
+// import { TicketsModule } from '../tickets/tickets.module';
 import { MatDialogModule } from '@angular/material/dialog';
+import { NgxLazyElModule } from '@juristr/ngx-lazy-el';
 
 @NgModule({
   declarations: [
@@ -28,8 +29,12 @@ import { MatDialogModule } from '@angular/material/dialog';
     MatTableModule,
     MatTabsModule,
     MatDialogModule,
+    NgxLazyElModule
     // need to import, otherwise we cannot use the component
-    TicketsModule
-  ]
+    // TicketsModule
+  ],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
-export class UsersModule {}
+export class UsersModule {
+  customElementComponent: Type<any> = UserDetailComponent;
+}

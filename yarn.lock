@@ -189,6 +189,13 @@
   dependencies:
     tslib "^1.9.0"
 
+"@angular/elements@^9.0.0-next.7":
+  version "9.0.0-next.7"
+  resolved "https://registry.yarnpkg.com/@angular/elements/-/elements-9.0.0-next.7.tgz#3ba5fa612c6b3e120235403f142a17ac7a7d61b5"
+  integrity sha512-CxfXNkrGMtQpztwyr34x/oIGLHSlv8XXY7j5PoZsWhVFLqVpGOXRfbE4983VBgFvjFgTvw3qeUo33W0uC5U1gg==
+  dependencies:
+    tslib "^1.9.0"
+
 "@angular/forms@~9.0.0-next.7":
   version "9.0.0-next.7"
   resolved "https://registry.yarnpkg.com/@angular/forms/-/forms-9.0.0-next.7.tgz#a68b44979ad2002ab0e240a7dda00192b113997b"
@@ -864,6 +871,13 @@
     esutils "^2.0.2"
     lodash "^4.17.13"
     to-fast-properties "^2.0.0"
+
+"@juristr/ngx-lazy-el@0.2.0":
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/@juristr/ngx-lazy-el/-/ngx-lazy-el-0.2.0.tgz#7c7cd5e66b91186b344fd54d9c31f8ae5ac64238"
+  integrity sha512-Mp8e2UBL5MSmUy0WwyMdtaimGiwwWPtC+jNmaP4hRXGR6p135TI3z4imNaIzrS6/NBpMVMwWeMf3ddDLyHBS9A==
+  dependencies:
+    tslib "^1.9.0"
 
 "@ngtools/webpack@9.0.0-next.5":
   version "9.0.0-next.5"
@@ -2734,6 +2748,13 @@ dns-txt@^2.0.2:
   integrity sha1-uR2Ab10nGI5Ks+fRB9iBocxGQrY=
   dependencies:
     buffer-indexof "^1.0.0"
+
+document-register-element@^1.7.2:
+  version "1.14.3"
+  resolved "https://registry.yarnpkg.com/document-register-element/-/document-register-element-1.14.3.tgz#3335d4578df6a1536a34595b91cca36dd5db61d7"
+  integrity sha512-SbJTzoQXLTcYxnpdDNRZXu/gwsGSShemXpvj6Pa6ujRwJFpJ41siil4tk4y+cQXnqylS6mc2Rtxp/PkMzfkqyQ==
+  dependencies:
+    lightercollective "^0.3.0"
 
 dom-serialize@^2.2.0:
   version "2.2.1"
@@ -4607,6 +4628,11 @@ lie@~3.3.0:
   integrity sha512-UaiMJzeWRlEujzAuw5LokY1L5ecNQYZKfmyZ9L7wDHb/p5etKaxXhohBcrw0EYby+G/NA52vRSN4N39dxHAIwQ==
   dependencies:
     immediate "~3.0.5"
+
+lightercollective@^0.3.0:
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/lightercollective/-/lightercollective-0.3.0.tgz#1f07638642ec645d70bdb69ab2777676f35a28f0"
+  integrity sha512-RFOLSUVvwdK3xA0P8o6G7QGXLIyy1L2qv5caEI7zXN5ciaEjbAriRF182kbsoJ1S1TgvpyGcN485fMky6qxOPw==
 
 loader-runner@^2.4.0:
   version "2.4.0"

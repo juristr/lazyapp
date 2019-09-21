@@ -6,6 +6,7 @@ import {
   MAT_DIALOG_DATA,
   MatDialog
 } from '@angular/material/dialog';
+import { DynamicHostComponent } from 'src/app/shared/dynamic-host';
 // import { TicketDetailComponent } from 'src/app/tickets/ticket-detail/ticket-detail.component';
 
 @Component({
@@ -39,5 +40,15 @@ export class UserDetailComponent implements OnInit {
     //     ticket
     //   }
     // });
+
+    this.matDialog.open(DynamicHostComponent, {
+      width: '650px',
+      data: {
+        selector: 'dynel-ticket-detail',
+        cmpInputs: {
+          ticket
+        }
+      }
+    });
   }
 }

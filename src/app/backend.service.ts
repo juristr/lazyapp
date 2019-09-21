@@ -34,7 +34,7 @@ export class BackendService {
     {
       id: 2,
       description: 'Record Egghead video',
-      assigneeId: 111,
+      assigneeId: 222,
       completed: false
     },
     {
@@ -46,7 +46,7 @@ export class BackendService {
     {
       id: 4,
       description: 'Finish ngrome presentation',
-      assigneeId: null,
+      assigneeId: 111,
       completed: false
     }
   ];
@@ -57,6 +57,42 @@ export class BackendService {
       ticketId: 1,
       userId: 333,
       change: 'created'
+    },
+    {
+      id: 2,
+      ticketId: 1,
+      userId: 111,
+      change: 'assigned'
+    },
+    {
+      id: 3,
+      ticketId: 1,
+      userId: 222,
+      change: 'resolved'
+    },
+    {
+      id: 4,
+      ticketId: 4,
+      userId: 222,
+      change: 'created'
+    },
+    {
+      id: 5,
+      ticketId: 4,
+      userId: 111,
+      change: 'assigned'
+    },
+    {
+      id: 6,
+      ticketId: 2,
+      userId: 111,
+      change: 'created'
+    },
+    {
+      id: 7,
+      ticketId: 2,
+      userId: 111,
+      change: 'assigned'
     }
   ];
 

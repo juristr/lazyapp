@@ -1,9 +1,9 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { BackendService, Ticket } from 'src/app/backend.service';
 import { of, combineLatest } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { map, switchMap } from 'rxjs/operators';
 import { MatDialog } from '@angular/material/dialog';
-import { UserDetailComponent } from 'src/app/users/user-detail/user-detail.component';
+import { DynamicHostComponent } from 'src/app/shared/dynamic-host';
 
 @Component({
   selector: 'app-ticket-detail',
@@ -23,23 +23,51 @@ export class TicketDetailComponent implements OnInit {
   ngOnInit() {
     this.vm$ = combineLatest(
       of(this.ticket),
-      this.backendService.userById(this.ticket.assigneeId)
+      this.backendService.userById(this.ticket.assigneeId),
+      this.backendService.ticketHistory(this.ticket.id),
+      this.backendService.users() // don't do this in production
     ).pipe(
-      map(([ticket, assignee]) => ({
+      map(([ticket, assignee, ticketHistory, users]) => ({
         ticket,
-        assignee
+        assignee,
+        ticketHistory: ticketHistory.reverse().map(entry => {
+          let changeMsg;
+
+          if (entry.change === 'created') {
+            changeMsg = 'opened the issue';
+          } else if (entry.change === 'assigned') {
+            changeMsg = 'assigned the issue';
+          } else if (entry.change === 'resolved') {
+            changeMsg = 'resolved the issue';
+          }
+
+          return {
+            userId: entry.userId,
+            userName: users.find(x => x.id === entry.userId).name,
+            changeMsg
+          };
+        })
       }))
     );
   }
 
   openUserDetail(userId) {
     this.backendService.userById(userId).subscribe(user => {
-      this.dialog.open(UserDetailComponent, {
+      this.dialog.open(DynamicHostComponent, {
         width: '650px',
         data: {
-          user
+          selector: 'dynel-user-detail',
+          cmpInputs: {
+            user
+          }
         }
       });
+      // this.dialog.open(UserDetailComponent, {
+      //   width: '650px',
+      //   data: {
+      //     user
+      //   }
+      // });
     });
   }
 }
