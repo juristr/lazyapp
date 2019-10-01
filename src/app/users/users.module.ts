@@ -10,7 +10,7 @@ import { MatTableModule } from '@angular/material/table';
 import { UserDetailPageComponent } from './user-detail-page.component';
 import { UserDetailComponent } from './user-detail/user-detail.component';
 import { MatTabsModule } from '@angular/material/tabs';
-// import { TicketsModule } from '../tickets/tickets.module';
+import { TicketsModule } from '../tickets/tickets.module';
 import { MatDialogModule } from '@angular/material/dialog';
 import { NgxLazyElModule } from '@juristr/ngx-lazy-el';
 
@@ -30,7 +30,6 @@ import { NgxLazyElModule } from '@juristr/ngx-lazy-el';
     MatTabsModule,
     MatDialogModule,
     NgxLazyElModule
-    // need to import, otherwise we cannot use the component
     // TicketsModule
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]

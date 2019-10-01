@@ -872,10 +872,10 @@
     lodash "^4.17.13"
     to-fast-properties "^2.0.0"
 
-"@juristr/ngx-lazy-el@0.2.0":
-  version "0.2.0"
-  resolved "https://registry.yarnpkg.com/@juristr/ngx-lazy-el/-/ngx-lazy-el-0.2.0.tgz#7c7cd5e66b91186b344fd54d9c31f8ae5ac64238"
-  integrity sha512-Mp8e2UBL5MSmUy0WwyMdtaimGiwwWPtC+jNmaP4hRXGR6p135TI3z4imNaIzrS6/NBpMVMwWeMf3ddDLyHBS9A==
+"@juristr/ngx-lazy-el@1.0.0-rc.1":
+  version "1.0.0-rc.1"
+  resolved "https://registry.yarnpkg.com/@juristr/ngx-lazy-el/-/ngx-lazy-el-1.0.0-rc.1.tgz#7db9cac4707ca3453d414d7e0b47c3ec020eb83e"
+  integrity sha512-PkNCu2plWhUiw1AHI6VbtVZyMcyQoowVHvDg3lvQpZOxHes1e2dqYn14m0nP7Xy4IF/AefiwkKjCZj9PM31/ZQ==
   dependencies:
     tslib "^1.9.0"
 
