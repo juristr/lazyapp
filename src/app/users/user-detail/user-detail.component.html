@@ -18,15 +18,10 @@
         <span>Assigned Tickets</span>
       </ng-template>
       <ng-template matTabContent>
-        <!-- <app-ticket-list
+        <app-ticket-list
           [tickets]="userTickets$ | async"
           [actionsTemplate]="ticketActions"
-        ></app-ticket-list> -->
-        <dynel-ticket-list
-          *ngxLazyEl
-          [tickets]="userTickets$ | async"
-          [actionsTemplate]="ticketActions"
-        ></dynel-ticket-list>
+        ></app-ticket-list>
         <ng-template #ticketActions let-row="row">
           <button mat-icon-button (click)="onOpenTicketDetails(row)">
             <mat-icon>edit</mat-icon>

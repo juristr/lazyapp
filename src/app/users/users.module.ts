@@ -29,8 +29,8 @@ import { NgxLazyElModule } from '@juristr/ngx-lazy-el';
     MatTableModule,
     MatTabsModule,
     MatDialogModule,
-    NgxLazyElModule
-    // TicketsModule
+    NgxLazyElModule,
+    TicketsModule
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
